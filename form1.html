@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style> :root {
+     --gap: 1rem;
+ }
+
+ body {
+     font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+     line-height: 1.5;
+     margin: 0;
+     background: #f7f7f8;
+     color: #222;
+ }
+
+ header,
+ main,
+ footer {
+     max-width: 900px;
+     margin: 0 auto;
+     padding: 0.75rem 1rem;
+     /* 🔹 Diperpendek padding */
+ }
+
+ header {
+     background: white;
+     border-bottom: 1px solid #e6e6e9;
+     position: sticky;
+     top: 0;
+     z-index: 10;
+ }
+
+.form-box {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.form-box {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+ h1 {
+     margin: 0 0 .0rem;
+     font-size: 1.4rem;
+    
+ }
+
+ section {
+     background: white;
+     border: 1px solid #e6e6e9;
+     border-radius: .75rem;
+     padding: 1rem 1.5rem;
+     margin: 0.75rem 0;
+     /* 🔹 Jarak antar section dikurangi */
+ }
+
+ fieldset {
+     border: 1px solid #dcdce0;
+     border-radius: .5rem;
+     padding: 1rem 1.25rem;
+     margin-bottom: 1rem;
+ }
+
+ legend {
+     padding: 0 .5rem;
+     font-weight: 600;
+ }
+
+ .grid {
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: var(--gap);
+ }
+
+ .row {
+     display: grid;
+     grid-template-columns: 180px 1fr;
+     align-items: center;
+     gap: .75rem;
+ }
+
+ label {
+     font-weight: 600;
+ }
+
+ input[type="text"],
+ input[type="password"],
+ input[type="email"],
+ input[type="number"],
+ input[type="date"],
+ input[type="time"],
+ input[type="url"],
+ input[type="tel"],
+ input[type="search"],
+ input[type="color"],
+ input[type="file"],
+ select,
+ textarea,
+ input[type="range"] {
+     width: 100%;
+     max-width: 500px;
+     padding: .55rem .6rem;
+     border: 1px solid #cfd3d8;
+     border-radius: .5rem;
+     background: #fff;
+     box-sizing: border-box;
+ }
+ 
+ .checkbox {
+   display: flex;
+   justify-content: space-between max-width: 300px;
+ }
+
+ input[type="color"] {
+     padding: 0;
+     height: 2.25rem;
+ }
+
+ textarea {
+     min-height: 90px;
+ }
+
+ .actions {
+     display: flex;
+     gap: .75rem;
+     flex-wrap: wrap;
+     margin-top: .75rem;
+     /* 🔹 Diperpendek sedikit */
+ }
+
+ button,
+ input[type="submit"],
+ input[type="reset"] {
+     border: 1px solid #1e88e5;
+     background: #2196f3;
+     color: white;
+     padding: .6rem 1rem;
+     border-radius: .5rem;
+     cursor: pointer;
+ }
+
+ input[type="reset"] {
+     border-color: #9e9e9e;
+     background: #bdbdbd;
+ }
+
+ footer {
+     color: #666;
+     font-size: .9rem;
+     text-align: center;
+     padding-top: .5rem;
+     /* 🔹 Jarak atas footer diperpendek */
+ }
+
+ @media (max-width: 720px) {
+
+     header,
+     main,
+     footer {
+         padding: 0.75rem;
+     }
+
+     section {
+         padding: 1rem;
+         margin: 0.75rem 0.5rem;
+     }
+
+     fieldset {
+         padding: 1rem;
+     }
+
+     .row {
+         grid-template-columns: 1fr;
+         gap: .5rem;
+     }
+
+     input,
+     select,
+     textarea {
+         max-width: 100%;
+     }
+
+     .actions {
+         justify-content: center;
+     }
+ }
+ 
+ .biar-berjejer {
+      display: flex;
+      gap: 10px; /* jarak antar input */
+    }
+    
+    .column {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-register {
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+ </style>
+</head>
+<body>
+<main>
+  <section>
+    <form action="" method="">
+        <h1>Class Registration Form</h1>
+        please fill out the form below to register for our class
+        <div class="grid">
+          <div class="row">
+            <div class="biar-berjejer">
+          <input type="text" placeholder="First Name">
+          <input type="text" placeholder="Last Name">
+            </div>
+            <div class="biar-berjejer">
+          <input type="text" placeholder="Email address">
+          <input type="text" placeholder="Phone Number">
+            </div>
+            
+            <label for=""><b>Class level</b></label>
+          <select id="classLevel" name="classLevel">
+          <option value="">Select your class level</option>
+         <option value="Beginner">Beginner</option>
+         <option value="Medium">Medium</option>
+         <option value="Proficient">Proficient</option>
+          </select>
+           please choose the appropriate level for your experience
+
+          <label for=""><b>Class Days</b></label>
+  Please select the days you are available to attend class
+<div class="checkbox">
+  <div>
+    <label><input type="checkbox"> Monday</label><br>
+    <label><input type="checkbox"> Wednesday</label><br>
+    <label><input type="checkbox"> Friday</label>
+  </div>
+  <div>
+    <label><input type="checkbox"> Tuesday</label><br>
+    <label><input type="checkbox"> Thursday</label><br>
+    <label><input type="checkbox"> Saturday</label>
+  </div>
+</div>
+<div>
+  <label>
+    <input type="checkbox">
+    I agree to the terms and conditions off the class registration
+  </label>
+</div>
+<div class="btn-container">
+  <button class="btn-register">Register Now!</button>
+</div>
+          </div>
+        </div>
+  </form>
+</section>
+</main>
+</body>
+</html>
