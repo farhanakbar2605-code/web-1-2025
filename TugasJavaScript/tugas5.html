@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>tugas 5</title>
+
+<style>
+#notif {
+    display: none;
+    padding: 15px 20px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<button id="showNotif">Tampilkan Notifikasi</button>
+<div id="notif">uhuyyy 🔔</div>
+
+<audio id="notifSound" src="new-notification-3-398649 (1).mp3" preload="auto"></audio>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $("#showNotif").on("click", function () {
+    const sound = document.getElementById("notifSound");
+    sound.currentTime = 0;
+    sound.play().catch(err => console.log(err));
+
+    $("#notif")
+        .stop(true, true)
+        .fadeIn(300)
+        .delay(3000)
+        .fadeOut(300);
+});
+</script>
+
+</body>
+</html>

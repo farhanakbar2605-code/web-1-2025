@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tugas4</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .slideshow-container {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .slide:first-child {
+            display: block;
+            position: relative; 
+        }
+        .buttons {
+            margin-top: 10px;
+        }
+        .btn {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slideshow-container">
+        
+        <img class="slide" src="aku.jpeg" alt="Gambar 1">
+        <img class="slide" src="kama.jpeg" alt="Gambar 2">
+        <img class="slide" src="kamiii.jpeg" alt="Gambar 3">
+    </div>
+
+    <div class="buttons">
+        <button id="prevBtn" class="btn">mundur</button>
+        <button id="nextBtn" class="btn">lanjut</button>
+    </div>
+    <script>
+        $(document).ready(function(){
+            var slides = $('.slide');
+            var currentSlide = 0;
+            var slideInterval = 3000; 
+            var fadeSpeed = 800; 
+            
+            function showSlide(index) {
+                
+                slides.eq(currentSlide).fadeOut(fadeSpeed, function() {
+                    
+                    currentSlide = index;
+                    
+                    slides.eq(currentSlide).fadeIn(fadeSpeed);
+                });
+            }
+            
+            $('#nextBtn').click(function() {
+                var nextIndex = (currentSlide + 1) % slides.length;
+                showSlide(nextIndex);
+            });
+            
+            $('#prevBtn').click(function() {
+                var prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(prevIndex);
+            });
+            
+        });
+    </script>
+</body>
+</html>

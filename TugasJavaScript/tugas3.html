@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>tugas 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .faq-item {
+            background: #f5f5f5;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            padding: 18px 20px;
+        }
+
+        .question {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .arrow.rotate {
+            transform: rotate(90deg);
+        }
+
+        .answer {
+            display: none;
+            margin-top: 12px;
+            color: #555;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>FAQ Interaktif</h1>
+
+    <div class="faq-item">
+        <div class="question">
+            Apa itu jQuery?
+            <span class="arrow">▶</span>
+        </div>
+        <div class="answer">
+            jQuery adalah library JavaScript yang mempermudah manipulasi DOM, event handling,
+            dan animasi pada website.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">
+            Bagaimana cara menggunakan .click() di jQuery?
+            <span class="arrow">▶</span>
+        </div>
+        <div class="answer">
+            Metode <b>.click()</b> digunakan untuk menangani event klik pada elemen HTML
+            dengan cara yang lebih sederhana.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">
+            Apa fungsi dari .toggle()?
+            <span class="arrow">▶</span>
+        </div>
+        <div class="answer">
+            <b>.toggle()</b> digunakan untuk menampilkan dan menyembunyikan elemen
+            secara bergantian.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">
+            Apa perbedaan antara .hover() dan CSS :hover?
+            <span class="arrow">▶</span>
+        </div>
+        <div class="answer">
+            CSS <b>:hover</b> hanya untuk efek visual, sedangkan
+            <b>.hover()</b> di jQuery bisa menjalankan fungsi JavaScript.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">
+            Apakah jQuery masih relevan di tahun ini?
+            <span class="arrow">▶</span>
+        </div>
+        <div class="answer">
+            Masih relevan untuk proyek sederhana, meskipun framework modern
+            seperti React dan Vue lebih sering digunakan.
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function () {
+    $('.question').click(function () {
+        $(this).next('.answer').slideToggle();
+        $(this).find('.arrow').toggleClass('rotate');
+    });
+});
+</script>
+
+</body>
+</html>
